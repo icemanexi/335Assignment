@@ -1,0 +1,11 @@
+function [result] = Bernstein(foo, n, t)
+%UNTITLED2 Summary of this function goes here
+%   Detailed explanation goes here
+% [sum_k=0^n][f(k/n)(nCk)t^k(1-t)^(n-k)]
+temp = @(foo, k, t) (foo(k/n)*nchoosek(n,k)*t^k*(1-t)^(n-k));
+
+result = cumsum(temp());
+cumsum()
+
+
+end
